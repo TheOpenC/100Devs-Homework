@@ -1,21 +1,18 @@
-# Ignore system and shell history files
-.bash_history
-.bash_profile
-.bash_profile.macports-saved*
-.CFUserTextEncoding
-.DS_Store
+# Ignore system files and editor configuration files
+*.DS_Store
+*.bash_history
+*.bash_profile
+*.CFUserTextEncoding
+*.python_history
+*.lesshst
 .gitconfig
-.lesshst
-.python_history
 
-# Ignore editor configuration and cache files
+# Ignore Atom and other editor configuration files
+class22/.atom
 *.cson
-*.atom
 *.coffee
 *.less
 
-# Ignore any other hidden files and folders
+# Ignore all hidden files and folders except .gitignore
 .*
-
-# Exclude the current .gitignore file itself
 !.gitignore
