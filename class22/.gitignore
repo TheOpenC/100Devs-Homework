@@ -1,0 +1,21 @@
+# Ignore system files and editor configuration files
+*.DS_Store
+*.bash_history
+*.bash_profile
+*.CFUserTextEncoding
+*.python_history
+*.lesshst
+.gitconfig
+
+# Ignore Atom and other editor configuration files
+class22/.atom
+*.cson
+*.coffee
+*.less
+
+# Ignore all hidden files and folders except .gitignore
+.*
+!.gitignore
+
+# ignore class 22 folder in the repo. It's messed up.
+class22/
