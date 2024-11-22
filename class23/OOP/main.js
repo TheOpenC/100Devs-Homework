@@ -1,34 +1,28 @@
-function Stopwatch(){
-    let startTime, endTime, running, duration = 0;
-    
-    this.start = function () {
-        if (running)
-            throw new Error('Stopwatch has already started.');
-        running = true;
-        startTime = new Date();
-    };
+//class = (ES6 feature) provides a more structured and cleaner way to work with objects compared to traditional constructor functions ex. static keyword, encapsulation, inheritance.
 
-    this.stop = function () {
-        if (!running)
-            throw new Error('Stopwatch is not started.');
+class Product {
+    constructor (name, price){
+        this.name = name;
+        this.price = price;
+    }
 
-        running = false;
-
-        endTime = new Date();
-
-        const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
-        duration += seconds;
-    };
-
-    this.reset = function () {
-        startTime = null;
-        endTime = null;
-        running = false;
-        duration = 0;
-
-    };
-
-    Object.defineProperty(this, 'duration', {
-
-    })
+    displayProduct(){
+        console.log(`Product: ${this.name}`);
+        console.log(`Price: ${this.price.toFixed(2)}`);
+    }
+    calculateTotal(salesTax){
+        return this.price + (this.price * salesTax);
+    }
 }
+
+const salesTax = .05;
+
+const product1 = new Product('Shirt', 19.99);
+const product2 = new Product('Pants', 22.50);
+const product3 = new Product("Underwear", 100.00);
+
+
+product2.displayProduct();
+
+const total = product1.calculateTotal(salesTax);
+console.log(`Total price (with tax): $${total.toFixed(2)}`);

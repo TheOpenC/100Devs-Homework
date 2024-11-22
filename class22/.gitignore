@@ -16,3 +16,6 @@ class22/.atom
 # Ignore all hidden files and folders except .gitignore
 .*
 !.gitignore
+
+# ignore class 22 folder in the repo. It's messed up.
+class22/

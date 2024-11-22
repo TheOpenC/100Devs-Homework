@@ -50,14 +50,11 @@ console.log(userRPS(rPS()))
 
 
 
-function xTimes(arr, x){
+function xTimes(arr){
     
     arr.forEach(pick => {
-        if (pick === 'rock' && rPS() === "scissors"){
-            console.log('user wins')
-        }else if (pick === 'paper' && rPS() === "rock"){
-            console.log('user wins')
-        }else if (pick === 'scissors' && rPS() === "paper"){
+        if( (pick === 'rock' && rPS() === "scissors") ||
+        (pick === 'paper' && rPS() === "rock") || (pick === 'scissors' && rPS() === "paper")){
             console.log('user wins')
         }else if (pick === rPS()){
             console.log('Tie!')
