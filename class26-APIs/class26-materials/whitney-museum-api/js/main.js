@@ -5,19 +5,46 @@ document.querySelector("button").addEventListener('click', getArt);
 
 function getArt() {
   const searchQuery = document.querySelector('input').value // get the user input
-  let currentIndex = 0 //track current object index
+ 
+  const urls = [
+    `https://whitney.org/api/artworks?q=${searchQuery}`,
+    `https://whitney.org/api/artists`
+  ]
 
   //fetch object IDs based on the search query
-  fetch(`https://whitney.org/api/artists?q=${searchQuery}`)
-  .then((res) => res.json())
+  Promise.all(urls.map(url => fetch(url).then(res => res.json())))
+   // res is the 'response' object returned by fetch
   .then((data) => {
+    console.log(data)
+    const artworks = data[0]
+    const artists = data[1]
 
-      console.log(data)
+    // if(artists.data && artists.data.length > 0) {
+    //   // sort the data by artist
       
-    
-   
-      })
-    }
+    //   const sortedData = artists.data.sort((a, b) => {
+    //     const nameA = a.attributes.display_name.toUpperCase(); // Ignore Case
+    //     const nameB = b.attributes.display_name.toUpperCase(); // Ignore Case
+    //     return nameA.localeCompare(nameB);
+    //   });
+
+      // Log the sorted data to the console
+  //     sortedData.forEach((artist) => {
+  //       console.log(`Name: ${artist.attributes.display_name}`);
+  //       console.log("Associated Data:", artist);
+  //     });
+  //   } else {
+  //     console.log('No results found for your search query.');
+  //   }
+  // })
+
+
+
+
+  .catch((err) => {
+    console.error(`Error: ${err}`);
+  });
+}
       
     // update the DOM with object details
 //     function updateDOM(object) {
