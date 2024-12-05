@@ -15,9 +15,12 @@ function getArt() {
   Promise.all(urls.map(url => fetch(url).then(res => res.json())))
    // res is the 'response' object returned by fetch
   .then((data) => {
-    console.log(data)
-    const artworks = data[0]
-    const artists = data[1]
+    console.log('artworks:', data[0])
+    // console.log('artists:', data[1])
+    // const artworks = data
+    // const artists = data[1]
+   
+    
 
     // if(artists.data && artists.data.length > 0) {
     //   // sort the data by artist
@@ -41,10 +44,10 @@ function getArt() {
 
 
 
-  .catch((err) => {
-    console.error(`Error: ${err}`);
-  });
-}
+  // .catch((err) => {
+  //   console.error(`Error: ${err}`);
+  // });
+})
       
     // update the DOM with object details
 //     function updateDOM(object) {
@@ -55,7 +58,4 @@ function getArt() {
 
 
 //     }
-// }
-
-
-              
+} 
