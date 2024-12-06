@@ -7,7 +7,7 @@ function getArt() {
   const searchQuery = document.querySelector('input').value // get the user input
  
   const urls = [
-    `https://whitney.org/api/artworks?q=${searchQuery}`,
+    `https://whitney.org/api/artworks`,
     `https://whitney.org/api/artists`
   ]
 
@@ -15,8 +15,14 @@ function getArt() {
   Promise.all(urls.map(url => fetch(url).then(res => res.json())))
    // res is the 'response' object returned by fetch
   .then((data) => {
-    console.log('artworks:', data[0])
-    // console.log('artists:', data[1])
+    console.log(searchQuery)
+    console.log('artworks:', data)
+     console.log('artists:', data[1])
+
+    console.log(data[0].data.filter(artwork => {
+      artwork.attributes.title.includes(searchQuery)
+    }));
+    
     // const artworks = data
     // const artists = data[1]
    
