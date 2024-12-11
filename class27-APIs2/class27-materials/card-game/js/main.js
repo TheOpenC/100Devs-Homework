@@ -35,7 +35,7 @@ function drawTwo(){
 
         let play1Val = data.cards[0].value
         let player2Val = data.cards[1].value
-        if(play1Val < player2Val){
+        if(play1Val > player2Val){
           document.querySelector('h3').innerText = 'Player 1 Wins'
         }else if(player1Val < player2Val){
            document.querySelector('h3').innerText = 'Player 2 Wins'
