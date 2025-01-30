@@ -2,38 +2,18 @@
 // Object Literal
 let pizza = {
 }
-pizza.cheese = 'mozzarella'
-pizza.toppings = 'onions'
-pizza.sauce = 'red'
-pizza.shape  = "square"
+ 
+pizza.cheese = "mozarella"
+pizza.topping = ["mushrooms", "spinach", "onions", "banana peppers"] 
+pizza.sauce = "red" 
+pizza.crust = "thick" 
 
-pizza.nyStyle = function() {
-    console.log(`Fold that ${this.shape} slice in half!`)
+pizza.estimatedDeliveryTime= function(){
+    console.log('Calculating...')
 }
-pizza.rat = function(){
-    console.log(`A rat just stole your ${this.cheese} slice`)
+pizza.burnMouth = function(){
+    console.log('f@$#!@$%^$%^~!!!')
 }
-
-pizza.devour = function(){
-    console.log(`You just ate the whole ${this.cheese} ${this.sauce} sauce pie with ${this.toppings} in one go!`)
+pizza.frisbee = function(){
+    console.log('Yeeeet')
 }
-
-
-// constructor 
-function MakeCar(make,model,color,doors){
-    this.make = make
-    this.model = model
-    this.color = color
-    this.doors = doors
-
-    this.honk = function (){
-        alert(`Beep Beep FUCKER`)
-    }
-    this.lock = function (){
-        alert(`Locked ${this.doors} doors!`)
-    }
-}
-
-let hondaCivic = new MakeCar(`Honda`, `Civic`, `Silver`, 4)
-let teslaRoadster = new MakeCar(`Tesla`, `Roadster`, `Red`, 2)
-
