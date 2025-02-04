@@ -2,24 +2,25 @@
 
 
 class NetflixTvShow {
-    constructor(name, time, genre, length) {
-        this.name = name,
-        this.time = time,
-        this.genre = genre,
+    constructor(show, length, genre, rating) {
+        this.show = show
         this.length = length
+        this.genre = genre
+        this.rating = rating
     }
-    tuneIn(){
-        return `Tune into ${this.name} at ${this.time}, weekdays!`
+    watch(){
+        console.log(`you are watching ${this.show}.`)
     }
-
-    promote(){
-        return `${this.name}, the best ${this.genre} show on TV!`
+    skip(){
+        console.log(` you skipped all the ads! ${this.show} is now 15 min shorter.`)
     }
-
-    promote2(){
-        return `Do you actually have anything going on on weeknights at ${this.time}? No, I didn't think so. Tune into ${this.name} for ${this.length}instead! `
-    }
-
+    favorite(){
+        console.log(` wow you really like ${this.show}`)
+    }   
 }
 
-let spongebob = new NetflixTvShow("spongebob", "9:30pm", "tunies", "2 hours")
+let breakingBad = new NetflixTvShow('Breaking Bad', "Pretty long", "Suspense", 8)
+
+
+
+
