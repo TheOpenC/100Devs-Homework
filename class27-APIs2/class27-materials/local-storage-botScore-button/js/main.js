@@ -1,21 +1,20 @@
 //Create a button that adds 1 to a botScore stored in localStorage 
-
-
-//on page load, set botScore to 0 if botscore doesn't exist.
-if(!localStorage.setItem('botScore', 0)) {
+// if botscore doesn't exist, create it and set to 0
+if(!localStorage.getItem('botScore')){
     localStorage.setItem('botScore', 0)
 }
+
+//on page load, set botScore to 0 if botscore doesn't exist.
+
 
 //each button click runs 'addAnothaOne' funct. 
 document.querySelector('button').addEventListener('click', addAnothaOne)
 
 function addAnothaOne(){
-    //get the value out of local storage and store it in botScoreVal
-    let botScoreVal = Number(localStorage.getItem('botScore'))
-    // add one to the variable
-    botScoreVal += 1
-    // set the value to whatever it was +1
+    let botScoreVal = +localStorage.getItem('botScore')
+    botScoreVal += 1;
     localStorage.setItem('botScore', botScoreVal)
+    document.querySelector('h2').innerText = botScoreVal
 }
 
 
