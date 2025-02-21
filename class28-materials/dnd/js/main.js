@@ -21,7 +21,13 @@ function getFetch(){
 
         data.subclasses.forEach(element => {
             console.log(element.name)
-            subClassChar.innerText += `\n${element.name} `
+            //create an li
+            const li = document.createElement('li')
+            //add text to li
+            li.textContent = obj.name
+            //append the li to the ul
+            document.querySelector('ul').appendChild(li)
+            
         });
            
       
