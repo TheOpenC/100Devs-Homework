@@ -18,3 +18,4 @@ class Espresso{
 }
 
 let gaggia = new Espresso(`red`, `Gaggia`, `Classic Pro`, 400)
+ 
