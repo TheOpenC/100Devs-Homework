@@ -35,10 +35,10 @@ function takesFourNums(n1, n2, n3, n4){
         total += n3 + n4;
         console.log(total)
     } else if (total < 100){
-        total -= n3 + n4;
+        total -= n3 - n4;
         console.log(total)
     } else if (total == 100){
-        alert((n1 * n2 * n3)%n4)
+        alert((n1 * n2 * n3) % n4)
     }
 }
 takesFourNums(100, 2, 3, 4)
