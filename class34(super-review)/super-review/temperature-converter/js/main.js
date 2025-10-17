@@ -4,13 +4,13 @@
 // need the value in c
 
 
-let c = Number(prompt('Pick a temp in Celcius'))
+// let c = Number(prompt('Pick a temp in Celcius'))
 
-function cToF (c){
-    console.log(`${c} Celcius =`,(c * 9/5) + 32, `Fahrenheit.`)
-}
+// function cToF (c){
+//     console.log(`${c} Celcius =`,(c * 9/5) + 32, `Fahrenheit.`)
+// }
 
-cToF(c);
+// cToF(c);
 
 
 document.querySelector('h1').addEventListener('click', cToF)
@@ -24,5 +24,5 @@ function cToF(){
 
     // show the value
 
-    document.querySelector('h2').innerText = temp
+    document.querySelector('h2').innerText = `${temp} C`
 }
